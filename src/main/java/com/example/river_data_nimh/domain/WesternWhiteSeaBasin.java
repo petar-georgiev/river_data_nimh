@@ -10,16 +10,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
-public class River {
+public class WesternWhiteSeaBasin {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Integer numSt;
     private String name;
 
     private String station;
@@ -36,9 +40,11 @@ public class River {
 
     private Integer dH;
 
+    private LocalDate ld;
+
     @Builder
-    public River(Long id, String name, String station, Double minQ, Double avrQ, Double maxQ, Integer h, Double q, Integer dH){
-        this.id = id;
+    public WesternWhiteSeaBasin(Integer numSt, String name, String station, Double minQ, Double avrQ, Double maxQ, Integer h, Double q, Integer dH, LocalDate ld){
+        this.numSt = numSt;
         this.name = name;
         this.station = station;
         this.minQ = minQ;
@@ -47,6 +53,7 @@ public class River {
         this.h = h;
         this.q = q;
         this.dH = dH;
+        this.ld = ld;
     }
 }
 

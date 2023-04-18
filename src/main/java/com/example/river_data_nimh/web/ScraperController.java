@@ -18,6 +18,6 @@ public class ScraperController {
     @PostMapping("/scrape")
     public ResponseEntity<String> scrape() throws IOException {
         scraperService.scrapeAndSave();
-        return ResponseEntity.ok("Scraper started successfully");
+        return ResponseEntity.ok("Scraper started successfully!");
     }
 }
