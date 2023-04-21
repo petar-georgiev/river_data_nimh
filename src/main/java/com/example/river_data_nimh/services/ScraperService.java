@@ -14,6 +14,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -34,6 +35,7 @@ public class ScraperService {
     private final WesternWhiteSeaBasinRepository westernWhiteSeaBasinRepository;
 
 
+    @Scheduled(cron = "0 0 12 * * ?")
     public void scrapeAndSave() throws IOException {
 
         // Fetch the HTML document using Jsoup
@@ -85,61 +87,61 @@ public class ScraperService {
                 switch (title) {
                     case "Дунавски басейн" -> {
                         DunabeBasin dunabeBasin = DunabeBasin.builder()
-                                .numSt(Integer.valueOf(numSt))
-                                .name(name)
-                                .station(station)
-                                .minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
-                                .avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
-                                .maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
-                                .h("n.a.".equals(h) ? null : Integer.valueOf(h))
-                                .q("n.a.".equals(q) ? null : Double.valueOf(q))
-                                .dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
-                                .ld(date)
+                                .a_numSt(Integer.valueOf(numSt))
+                                .b_name(name)
+                                .c_station(station)
+                                .d_minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
+                                .e_avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
+                                .f_maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
+                                .g_h("n.a.".equals(h) ? null : Integer.valueOf(h))
+                                .h_q("n.a.".equals(q) ? null : Double.valueOf(q))
+                                .i_dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
+                                .j_ld(date)
                                 .build();
                         dunabeBasinRepository.save(dunabeBasin);
                     }
                     case "Черноморски басейн" -> {
                         BlackSeaBasin blackSeaBasin = BlackSeaBasin.builder()
-                                .numSt(Integer.valueOf(numSt))
-                                .name(name)
-                                .station(station)
-                                .minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
-                                .avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
-                                .maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
-                                .h("n.a.".equals(h) ? null : Integer.valueOf(h))
-                                .q("n.a.".equals(q) ? null : Double.valueOf(q))
-                                .dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
-                                .ld(date)
+                                .a_numSt(Integer.valueOf(numSt))
+                                .b_name(name)
+                                .c_station(station)
+                                .d_minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
+                                .e_avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
+                                .f_maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
+                                .g_h("n.a.".equals(h) ? null : Integer.valueOf(h))
+                                .h_q("n.a.".equals(q) ? null : Double.valueOf(q))
+                                .i_dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
+                                .j_ld(date)
                                 .build();
                         blackSeaBasinRepository.save(blackSeaBasin);
                     }
                     case "Източнобеломорски басейн" -> {
                         EasternWhiteSeaBasin easternWhiteSeaBasin = EasternWhiteSeaBasin.builder()
-                                .numSt(Integer.valueOf(numSt))
-                                .name(name)
-                                .station(station)
-                                .minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
-                                .avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
-                                .maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
-                                .h("n.a.".equals(h) ? null : Integer.valueOf(h))
-                                .q("n.a.".equals(q) ? null : Double.valueOf(q))
-                                .dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
-                                .ld(date)
+                                .a_numSt(Integer.valueOf(numSt))
+                                .b_name(name)
+                                .c_station(station)
+                                .d_minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
+                                .e_avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
+                                .f_maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
+                                .g_h("n.a.".equals(h) ? null : Integer.valueOf(h))
+                                .h_q("n.a.".equals(q) ? null : Double.valueOf(q))
+                                .i_dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
+                                .j_ld(date)
                                 .build();
                         easternWhiteSeaBasinRepository.save(easternWhiteSeaBasin);
                     }
                     case "Западнобеломорски басейн" -> {
                         WesternWhiteSeaBasin westernWhiteSeaBasin = WesternWhiteSeaBasin.builder()
-                                .numSt(Integer.valueOf(numSt))
-                                .name(name)
-                                .station(station)
-                                .minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
-                                .avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
-                                .maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
-                                .h("n.a.".equals(h) ? null : Integer.valueOf(h))
-                                .q("n.a.".equals(q) ? null : Double.valueOf(q))
-                                .dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
-                                .ld(date)
+                                .a_numSt(Integer.valueOf(numSt))
+                                .b_name(name)
+                                .c_station(station)
+                                .d_minQ("n.a.".equals(minQ) ? null : Double.valueOf(minQ))
+                                .e_avrQ("n.a.".equals(avrQ) ? null : Double.valueOf(avrQ))
+                                .f_maxQ("n.a.".equals(maxQ) ? null : Double.valueOf(maxQ))
+                                .g_h("n.a.".equals(h) ? null : Integer.valueOf(h))
+                                .h_q("n.a.".equals(q) ? null : Double.valueOf(q))
+                                .i_dH("n.a.".equals(dH) ? null : Integer.valueOf(dH))
+                                .j_ld(date)
                                 .build();
                         westernWhiteSeaBasinRepository.save(westernWhiteSeaBasin);
                     }
