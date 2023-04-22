@@ -1,0 +1,1 @@
+web: java -jar build/libs/river_data_nimh.jar
