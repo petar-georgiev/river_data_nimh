@@ -1,12 +1,10 @@
 spring:
     datasource:
         driverClassName: org.postgresql.Driver
-        url: ${JDBC_DATABASE_URL}
-        username: ${JDBC_DATABASE_USERNAME}
-        password: ${JDBC_DATABASE_PASSWORD}
+        url: jdbc:postgresql://horton.db.elephantsql.com:5432/orbuujnl?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+        username: ${POSTGRES_USERNAME}
+        password: ${POSTGRES_PASSWORD}
     jpa:
         hibernate:
             ddl-auto: update
         database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-server.port: ${PORT:8080}
