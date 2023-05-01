@@ -19,42 +19,41 @@ public class DunabeBasin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer a_numSt;
+    private Integer numSt;
 
 
-    private String b_name;
+    private String name;
 
 
-    private String c_station;
+    private String station;
+
+    private Double minQ;
+
+    private Double avrQ;
 
 
-    private Double d_minQ;
+    private Double maxQ;
 
-    private Double e_avrQ;
+    private Integer h;
 
+    private Double q;
 
-    private Double f_maxQ;
+    private Integer dH;
 
-    private Integer g_h;
-
-    private Double h_q;
-
-    private Integer i_dH;
-
-    private LocalDate j_ld;
+    private LocalDate ld;
 
     @Builder
-    public DunabeBasin(Integer a_numSt, String b_name, String c_station, Double d_minQ, Double e_avrQ, Double f_maxQ, Integer g_h, Double h_q, Integer i_dH, LocalDate j_ld){
-        this.a_numSt = a_numSt;
-        this.b_name = b_name;
-        this.c_station = c_station;
-        this.d_minQ = d_minQ;
-        this.e_avrQ = e_avrQ;
-        this.f_maxQ = f_maxQ;
-        this.g_h = g_h;
-        this.h_q = h_q;
-        this.i_dH = i_dH;
-        this.j_ld = j_ld;
+    public DunabeBasin(Integer numSt, String name, String station, Double minQ, Double avrQ, Double maxQ, Integer h, Double q, Integer dH, LocalDate ld){
+        this.numSt = numSt;
+        this.name = name;
+        this.station = station;
+        this.minQ = minQ;
+        this.avrQ = avrQ;
+        this.maxQ = maxQ;
+        this.h = h;
+        this.q = q;
+        this.dH = dH;
+        this.ld = ld;
     }
 }
 
