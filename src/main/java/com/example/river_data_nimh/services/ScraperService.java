@@ -101,7 +101,7 @@ public class ScraperService {
                                     .ld(date)
                                     .build();
                             dunabeBasinRepository.save(dunabeBasin);
-                            log.info("River data is saved to dunabeBasin's table.");
+                            log.info("River data for station " + station + " is saved to dunabeBasin's table.");
 
                         }
                         case "Черноморски басейн" -> {
@@ -118,7 +118,7 @@ public class ScraperService {
                                     .ld(date)
                                     .build();
                             blackSeaBasinRepository.save(blackSeaBasin);
-                            log.info("River data is saved to blackSeaBasin's table.");
+                            log.info("River data for station " + station + " is saved to blackSeaBasin's table.");
 
                         }
                         case "Източнобеломорски басейн" -> {
@@ -135,7 +135,7 @@ public class ScraperService {
                                     .ld(date)
                                     .build();
                             easternWhiteSeaBasinRepository.save(easternWhiteSeaBasin);
-                            log.info("River data is saved to easternWhiteSeaBasin's table.");
+                            log.info("River data for station " + station + " is saved to easternWhiteSeaBasin's table.");
                         }
                         case "Западнобеломорски басейн" -> {
                             WesternWhiteSeaBasin westernWhiteSeaBasin = WesternWhiteSeaBasin.builder()
@@ -151,7 +151,7 @@ public class ScraperService {
                                     .ld(date)
                                     .build();
                             westernWhiteSeaBasinRepository.save(westernWhiteSeaBasin);
-                            log.info("River data is saved to westernWhiteSeaBasin's table.");
+                            log.info("River data for station " + station + " is saved to westernWhiteSeaBasin's table.");
                         }
                     }
                 }
