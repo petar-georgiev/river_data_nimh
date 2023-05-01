@@ -7,7 +7,7 @@
     spring:
       datasource:
         driverClassName: org.postgresql.Driver
-        url: jdbc:postgresql://db.pgygawkwarigmvuiurqn.supabase.co:5432/postgres?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+        url: ${DB_URL}
         username: ${USERNAME}
         password: ${PASSWORD}
       jpa:
