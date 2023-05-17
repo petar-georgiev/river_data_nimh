@@ -5,10 +5,7 @@ import com.example.river_data_nimh.services.EasternWhiteSeaBasinService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -16,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/easternWhiteSeaBasin")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:8081/")
 public class EasternWhiteSeaRestController {
     private final EasternWhiteSeaBasinService easternWhiteSeaBasinService;
 
