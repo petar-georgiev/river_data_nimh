@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/dunabeBasin")
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:8081/")
+@CrossOrigin("${host.url}")
 public class DunabeRestController {
     private final DunabeBasinService dunabeBasinService;
 

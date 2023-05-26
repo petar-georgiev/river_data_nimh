@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  river-data-fetcher:
+    image: peteshonik/river_data_nimh:v1
+    container_name: river-data-fetcher
+    environment:
+      - USERNAME=postgres
+      - PASSWORD=RiverDatabasePass123!@
+      - DB_URL=jdbc:postgresql://db.pgygawkwarigmvuiurqn.supabase.co:5432/postgres?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true
+    ports:
+      - 8080:8080

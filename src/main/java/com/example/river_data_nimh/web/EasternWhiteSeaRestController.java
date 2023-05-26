@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/easternWhiteSeaBasin")
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:8081/")
+@CrossOrigin("${host.url}")
 public class EasternWhiteSeaRestController {
     private final EasternWhiteSeaBasinService easternWhiteSeaBasinService;
 

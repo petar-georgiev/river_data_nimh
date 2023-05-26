@@ -1,23 +1,17 @@
-FROM gradle:7.6.1-jdk17 AS build
-ENV APP_HOME=/home/gradle/river_nimh_data
+FROM openjdk:17-jdk-slim AS build
 
-WORKDIR $APP_HOME
+# Copy the necessary build files to a build directory
+COPY . /home/gradle/river_nimh_data
 
-COPY . .
+WORKDIR /home/gradle/river_nimh_data
 
-#COPY build.gradle settings.gradle gradlew ./
-#
-#COPY gradle ./gradle
-#
-#COPY src ./src
+# Build the application (if necessary)
 
-RUN gradle clean build --no-daemon
+# Assuming the build process generates the JAR file at '/home/gradle/river_nimh_data/build/libs/river_data_nimh.jar'
 
 FROM openjdk:17-jdk-slim
-ENV APP_HOME=/home/gradle/river_nimh_data
-RUN mkdir /app
 
-COPY --from=build $APP_HOME/build/libs/river_data_nimh.jar /app/app.jar
+COPY --from=build /home/gradle/river_nimh_data/build/libs/river_data_nimh.jar /app/app.jar
 
 EXPOSE 8080
 

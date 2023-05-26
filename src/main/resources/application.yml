@@ -27,6 +27,8 @@
       jpa:
         hibernate:
           ddl-auto: update
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
+          database-platform: org.hibernate.dialect.PostgreSQLDialect
     server:
       port: 8080
+    host:
+      url: ${HOST_URL}
