@@ -30,7 +30,7 @@ public class ScraperService {
     private final DateRecordsRepository dateRecordsRepository;
 
 
-    @Scheduled(cron = "0 */30 * ? * *")
+    @Scheduled(cron = "0 */14 * ? * *")
     public void scrapeAndSave() throws IOException {
 
         // Fetch the HTML document using Jsoup
