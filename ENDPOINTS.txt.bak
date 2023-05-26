@@ -1,0 +1,10 @@
+http://212.72.212.9:19000
+
+/api/dunabeBasin (Ex: http://212.72.212.9:19000/api/dunabeBasin)
+/api/blackSeaBasin
+/api/easternWhiteSeaBasin
+/api/westernWhiteSeaBasin
+							/date/{date} (Ex: http://212.72.212.9:19000/api/dunabeBasin/date/2023-05-03)
+							/date/{startDate}/{endDate} (Ex: http://212.72.212.9:19000/api/dunabeBasin/date/2023-05-03/2023-05-05)
+							/numAndDate/{num}/{startDate}/{endDate} (Ex: http://212.72.212.9:19000/api/dunabeBasin/numAndDate/23850/2023-05-03/2023-05-05)
+							/nameAndDate/{name}/{startDate}/{endDate} (Ex: http://212.72.212.9:19000/api/dunabeBasin/nameAndDate/Янтра/2023-05-03/2023-05-05)
