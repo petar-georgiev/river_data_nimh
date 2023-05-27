@@ -29,6 +29,11 @@
         hibernate:
           ddl-auto: update
           database-platform: org.hibernate.dialect.PostgreSQLDialect
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
     server:
       port: 8080
     host:
