@@ -12,6 +12,7 @@
         password: ${PASSWORD}
         hikari:
           maximum-pool-size: 10
+          minimum-idle: 1
           data-source-properties:
             cachePrepStmts: true
             prepStmtCacheSize: 250
@@ -23,7 +24,7 @@
             cacheServerConfiguration: true
             elideSetAutoCommits: true
             maintainTimeStats: false
-          connection-timeout: 1500000
+          connection-timeout: 10000
           max-lifetime: -1
       jpa:
         hibernate:
