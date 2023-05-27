@@ -23,8 +23,8 @@
             cacheServerConfiguration: true
             elideSetAutoCommits: true
             maintainTimeStats: false
-          connection-timeout: 2000000
-          max-lifetime: 2000000
+          connection-timeout: 1500000
+          max-lifetime: 1500000
       jpa:
         hibernate:
           ddl-auto: update
