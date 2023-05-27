@@ -24,7 +24,7 @@
             elideSetAutoCommits: true
             maintainTimeStats: false
           connection-timeout: 1500000
-          max-lifetime: 1500000
+          max-lifetime: -1
       jpa:
         hibernate:
           ddl-auto: update
