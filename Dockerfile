@@ -14,7 +14,6 @@ COPY --from=cache /home/gradle/cache_home /home/gradle/.gradle
 
 # Copy the application source code
 COPY . /usr/src/java-code/
-COPY .env /usr/src/java-code/
 
 WORKDIR /usr/src/java-code
 
