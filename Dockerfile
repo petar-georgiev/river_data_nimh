@@ -4,6 +4,8 @@ FROM render/base:1
 # Build stage
 FROM gradle:7.2.0-jdk11 as builder
 
+RUN apt-get update && apt-get install -y gradle
+
 COPY . /home/gradle/river_nimh_data
 
 WORKDIR /home/gradle/river_nimh_data
