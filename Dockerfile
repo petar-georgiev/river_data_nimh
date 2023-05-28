@@ -1,17 +1,17 @@
 # Use the base Render image
 FROM render/base:1
 
-# Install Gradle
-RUN apt-get update && apt-get install -y gradle
+# Build stage
+FROM openjdk:17-jdk-slim AS build
 
-# Copy the necessary build files to a build directory
 COPY . /app
 
 WORKDIR /app
 
-# Build the application
-RUN gradle build
+# Perform the necessary build steps
+RUN ./gradlew build
 
+# Final stage
 FROM openjdk:17-jdk-slim
 
 COPY --from=build /app/build/libs/river_data_nimh.jar /app/app.jar
