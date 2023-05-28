@@ -1,23 +1,13 @@
-# Use the base Render image
-FROM render/base:1
+FROM openjdk:17-jdk-slim AS build
 
-# Build stage
-FROM gradle:7.2.0-jdk11 as builder
+COPY . .
 
-RUN apt-get update && apt-get install -y gradle
+RUN ./gradlew clean build
 
-COPY . /home/gradle/river_nimh_data
-
-WORKDIR /home/gradle/river_nimh_data
-
-# Run the Gradle build
-RUN ./gradlew build
-
-# Final stage
 FROM openjdk:17-jdk-slim
 
-COPY --from=builder /home/gradle/river_nimh_data/build/libs/river_data_nimh.jar /app/app.jar
+COPY --from=build /target/river_data_nimh.jar river_data_nimh.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","river_data_nimh.jar"]
