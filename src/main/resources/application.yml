@@ -24,8 +24,6 @@
             cacheServerConfiguration: true
             elideSetAutoCommits: true
             maintainTimeStats: false
-          connection-timeout: 10000
-          max-lifetime: -1
       jpa:
         hibernate:
           ddl-auto: update

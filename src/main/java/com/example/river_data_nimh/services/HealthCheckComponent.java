@@ -40,8 +40,7 @@ public class HealthCheckComponent implements HealthIndicator {
     public void performHealthCheck() {
         Health applicationHealth = health();
         if (applicationHealth.getStatus().equals(Status.UP)) {
-            // Log the health status
-            log.info("Application is HEALTHY");
+           // log.info("Application is HEALTHY");
         } else {
             log.info("Application is UNHEALTHY. Restarting...");
             SpringApplication.run(RiverDataNimhApplication.class);
