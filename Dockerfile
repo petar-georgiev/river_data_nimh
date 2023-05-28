@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 # Perform the necessary build steps
-RUN gradlew build
+RUN gradle build
 
 # Final stage
 FROM openjdk:17-jdk-slim
