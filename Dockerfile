@@ -1,13 +1,15 @@
 FROM openjdk:17-jdk-slim AS build
 
-COPY . .
+COPY . /home/gradle/river_nimh_data
 
-RUN ./gradlew clean build
+WORKDIR /home/gradle/river_nimh_data
+
+#RUN ./gradlew clean build
 
 FROM openjdk:17-jdk-slim
 
-COPY --from=build /target/river_data_nimh.jar river_data_nimh.jar
+COPY --from=build /home/gradle/river_nimh_data/build/libs/river_data_nimh.jar /app/app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","river_data_nimh.jar"]
+ENTRYPOINT ["java","-jar","/app/app.jar"]
