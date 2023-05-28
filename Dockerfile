@@ -1,21 +1,30 @@
-# Use the base Render image
-FROM render/base:1
-
 # Build stage
-FROM openjdk:17-jdk-slim AS build
+FROM gradle:6.9.3-jdk11 as builder
 
-COPY . /app
+# Copy the Gradle cache
+COPY --from=cache /home/gradle/cache_home /home/gradle/.gradle
 
-WORKDIR /app
+# Copy the application source code
+COPY . /usr/src/java-code/
+COPY .env /usr/src/java-code/
 
-# Perform the necessary build steps
-RUN gradle build
+WORKDIR /usr/src/java-code
+
+# Build the application using Gradle
+RUN gradle bootJar -i --stacktrace
 
 # Final stage
-FROM openjdk:17-jdk-slim
-
-COPY --from=build /app/build/libs/river_data_nimh.jar /app/app.jar
+FROM openjdk:11-jre-slim
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+# Set the user to root
+USER root
+
+WORKDIR /usr/src/java-app
+
+# Copy the JAR file from the build stage
+COPY --from=builder /usr/src/java-code/build/libs/*.jar ./app.jar
+
+# Set the entrypoint to run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
