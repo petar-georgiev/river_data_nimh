@@ -18,7 +18,7 @@ COPY . /usr/src/java-code/
 WORKDIR /usr/src/java-code
 
 # Build the application using Gradle
-RUN gradle bootJar -i --stacktrace
+RUN gradle build
 
 # Final stage
 FROM openjdk:11-jre-slim
