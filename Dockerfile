@@ -4,7 +4,7 @@ COPY . /home/gradle/river_nimh_data
 
 WORKDIR /home/gradle/river_nimh_data
 
-RUN ./gradlew build
+RUN gradle build
 
 FROM openjdk:17-jdk-slim
 
